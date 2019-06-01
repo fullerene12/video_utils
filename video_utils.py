@@ -10,8 +10,7 @@ class Video(object):
         # initialize the video file
         self.file_name = file_name
         self.cap = cv2.VideoCapture(self.file_name)
-        
-        #load basic information of the video file
+        # load basic information of the video file
         self.num_frame = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
         self.fps_ = self.cap.get(cv2.CAP_PROP_FPS)
         self.w = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
