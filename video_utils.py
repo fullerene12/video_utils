@@ -54,7 +54,7 @@ class Video(object):
         return (self.total_frames,self.height,self.width,self.num_channels)
 
     def __getitem__(self,val):
-        #generate a list of frame ids based on slides value
+        # return a numpy array based on the index slicing information
         vid_ids = np.arange(0,self.total_frames)[val]
         if type(vid_ids) == np.ndarray:
             vid_data = np.zeros((len(vid_ids),self.height,self.width,self.num_channels))
@@ -66,7 +66,7 @@ class Video(object):
         
     @property
     def data(self):
-        #returns entire video as an numpy array, use with caution for large video files
+        # returns entire video as an numpy array, use with caution for large video files
         return self[0:self.total_frames]
         
         
