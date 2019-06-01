@@ -82,3 +82,4 @@ class Video(object):
                                                                                            self.height,self.width,self.num_channels)
 
     def close(self):
+        self.cap.release()
